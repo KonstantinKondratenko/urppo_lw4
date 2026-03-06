@@ -1,5 +1,8 @@
 #!/bin/bash
 
+
+echo "Hello!"
+
 if [ $# != 1 ]; then
     echo "Error: use $0 (v, o, p, d)"
     exit 1
@@ -23,3 +26,5 @@ case $1 in
         exit 1
         ;;
 esac
+
+echo "Bye bye!"
