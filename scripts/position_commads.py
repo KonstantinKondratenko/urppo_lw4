@@ -2,7 +2,8 @@ import numpy as np
 
 
 def between_points(
-    NUM_WP: int, x0: float, y0: float, z0: float, x1: float, y1: float, z1: float
+    NUM_WP: int, x0: float, y0: float, z0: float,
+    x1: float, y1: float, z1: float
 ):
     INIT_XYZ = np.array([x0, y0, z0]).reshape(1, 3)
     TARGET_POS = np.zeros((NUM_WP, 3))
@@ -17,7 +18,8 @@ def between_points(
 
 
 def between_points_exp(
-    NUM_WP: int, x0: float, y0: float, z0: float, x1: float, y1: float, z1: float
+    NUM_WP: int, x0: float, y0: float, z0: float,
+    x1: float, y1: float, z1: float
 ):
     INIT_XYZ = np.array([x0, y0, z0]).reshape(1, 3)
     TARGET_POS = np.zeros((NUM_WP, 3))
@@ -32,12 +34,14 @@ def between_points_exp(
     return INIT_XYZ, TARGET_POS
 
 
-def relative_movement(x0: float, y0: float, z0: float, dx: float, dy: float, dz: float):
+def relative_movement(x0: float, y0: float,
+                      z0: float, dx: float, dy: float, dz: float):
     return [x0 + dx, y0 + dy, z0 + dz]
 
 
 def circle(
-    Radius: float, NUM_WP: int, init_X: float, init_Y: float, init_Z: float, segment=1
+    Radius: float, NUM_WP: int, init_X: float,
+    init_Y: float, init_Z: float, segment=1
 ):
     if init_Z <= 0:
         init_Z = 0.1
@@ -54,7 +58,8 @@ def circle(
 
 
 def circle_frome_centre(
-    Radius: float, NUM_WP: int, init_X: float, init_Y: float, init_Z: float, segment=1
+    Radius: float, NUM_WP: int, init_X: float,
+    init_Y: float, init_Z: float, segment=1
 ):
     if init_Z <= 0:
         init_Z = 0.1
@@ -211,7 +216,8 @@ def cone_frome_centre(
 
 
 def spiral(
-    Radius: float, NUM_WP: int, init_X: float, init_Y: float, init_Z: float, segment=1
+    Radius: float, NUM_WP: int, init_X: float,
+    init_Y: float, init_Z: float, segment=1
 ):
     if init_Z == 0:
         init_Z = 0.1
@@ -228,7 +234,8 @@ def spiral(
 
 
 def spiral_frome_centre(
-    Radius: float, NUM_WP: int, init_X: float, init_Y: float, init_Z: float, segment=1
+    Radius: float, NUM_WP: int, init_X: float,
+    init_Y: float, init_Z: float, segment=1
 ):
     if init_Z == 0:
         init_Z = 0.1
@@ -244,7 +251,8 @@ def spiral_frome_centre(
     return INIT_XYZ, TARGET_POS
 
 
-def spherical_to_cartesian(R: float, phi: float, teta: float):  # angles in radians
+def spherical_to_cartesian(R: float, phi: float,
+                           teta: float):  # angles in radians
     """
     conversion from Cartesian to spherical coordinate system
     https://en.wikipedia.org/wiki/Spherical_coordinate_system
@@ -255,7 +263,8 @@ def spherical_to_cartesian(R: float, phi: float, teta: float):  # angles in radi
     return [x, y, z]
 
 
-def cylindrical_to_cartesian(ro: float, phi: float, z: float):  # angles in radians
+def cylindrical_to_cartesian(ro: float, phi: float,
+                             z: float):  # angles in radians
     """
     conversion from Cartesian to cylindrical coordinates
     https://en.wikipedia.org/wiki/Cylindrical_coordinate_system
