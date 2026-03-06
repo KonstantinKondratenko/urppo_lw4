@@ -1,0 +1,2 @@
+numpy==1.26.4
+pycodestyle==2.14.0
